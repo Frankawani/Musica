@@ -1,0 +1,12 @@
+.asideList {
+  position: relative;
+}
+.asideListItem svg path {
+  transition: all 400ms cubic-bezier(0.115, 0.38, 0.8, 1);
+}
+.asideListItem:hover svg path {
+  fill: var(--amber-300) !important;
+}
+.linkActive svg path {
+  fill: var(--amber-300) !important;
+}

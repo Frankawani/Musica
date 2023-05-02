@@ -1,0 +1,49 @@
+.resetFlow * {
+  overflow: unset !important;
+}
+.rotateEffect {
+  overflow: hidden;
+  transition: all 0.5s ease;
+  border-radius: 40px;
+}
+.rotateEffect img {
+  top: -45% !important;
+  margin-bottom: unset !important;
+  right: 10rem !important;
+  margin-left: auto !important;
+  transition: all 1s ease;
+}
+@media screen and (min-width: 1100px) {
+  .rotateEffect img {
+    animation: rotate3d 3s linear infinite;
+  }
+}
+
+@-webkit-keyframes rotate3d {
+  0% {
+    -webkit-transform: rotate3d(3, 0, 2, 0);
+    opacity: 0.5;
+  }
+  100% {
+    -webkit-transform: rotate3d(0, 6, 2, 360deg);
+  }
+}
+@keyframes rotate3d {
+  0% {
+    transform: rotate3d(3, 0, 2, 0);
+    opacity: 0.5;
+  }
+  100% {
+    transform: rotate3d(0, 10, 2, 360deg);
+  }
+}
+.card {
+  transition: 500ms linear;
+  cursor: pointer;
+}
+.card img {
+  transition: all 500ms ease;
+}
+.card:hover img.user {
+  transform: scaleY(1.2) translateY(-40px);
+}

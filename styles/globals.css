@@ -1,0 +1,156 @@
+* {
+  padding: 0;
+  margin: 0;
+}
+body {
+  font-family: "Quicksand" !important;
+}
+
+@import url("https://fonts.googleapis.com/css2?family=Quicksand:wght@400;500;600;700&display=swap");
+@import "tailwindcss/base";
+@import "tailwindcss/components";
+@import "tailwindcss/utilities";
+
+@layer base {
+  :root {
+    --amber-300: #fcd34d;
+    --amber-400: #fbbf24;
+    --amber-500: #f59e0b;
+    --volume: 100%;
+    --seeker: 0;
+  }
+}
+
+@layer components {
+  .min-w-700 {
+    min-width: 700px;
+  }
+  input[type="range"] {
+    -webkit-appearance: none;
+    appearance: none;
+    transition: all 1s linear;
+  }
+  input[type="range"]::-webkit-slider-thumb {
+    appearance: none;
+    -webkit-appearance: none;
+    box-sizing: content-box;
+    height: 10px;
+    width: 10px;
+    border-radius: 50%;
+    cursor: pointer;
+    background-color: theme("backgroundColor.amber.200");
+    position: relative;
+    top: -2px;
+    transition: all 1s ease;
+  }
+  input[type="range"]:active::-webkit-slider-thumb {
+    transition: none;
+    transform: scale(1.3);
+    background-color: theme("backgroundColor.amber.200");
+  }
+  input[type="range"]::-webkit-slider-runnable-track {
+    width: 100%;
+    height: 6px;
+    cursor: pointer;
+    border-radius: 10px;
+    transition: all 300ms ease-in-out;
+  }
+
+  input[type="range"]::-moz-range-track {
+    width: 100%;
+    height: 6px;
+    cursor: pointer;
+  }
+  input[type="range"]::-moz-range-progress {
+    background-color: theme("backgroundColor.amber.500");
+  }
+  input[type="range"]::-moz-focus-outer {
+    border: 0;
+  }
+  input[type="range"]::-moz-range-thumb {
+    box-sizing: content-box;
+    border: 1px solid theme("backgroundColor.amber.400");
+    height: 10px;
+    width: 10px;
+    border-radius: 50%;
+    background-color: inherit;
+    cursor: pointer;
+    top: -2px;
+  }
+  input[type="range"]:active::-moz-range-thumb {
+    transform: scale(1.2);
+    background: theme("backgroundColor.amber.400");
+  }
+
+  input[type="range"]::-ms-track {
+    width: 100%;
+    height: 3px;
+    cursor: pointer;
+    background: transparent;
+    border: solid transparent;
+    box-sizing: border-box;
+    color: transparent;
+  }
+  input[type="range"]::-ms-fill-lower {
+    background-color: theme("backgroundColor.amber.400");
+  }
+
+  input[type="range"]::-ms-thumb {
+    box-sizing: content-box;
+    border: 1px solid theme("backgroundColor.amber.400");
+    height: 10px;
+    width: 10px;
+    border-radius: 50%;
+    background-color: theme("backgroundColor.dark.100");
+    cursor: pointer;
+  }
+
+  input[type="range"]:active::-ms-thumb {
+    transform: scale(1.2);
+    background: theme("backgroundColor.dark.100");
+  }
+
+  input[type="range"]#audioVolume::-webkit-slider-runnable-track {
+    background: linear-gradient(
+      to right,
+      theme("backgroundColor.amber.300") var(--volume),
+      theme("backgroundColor.dark.100") var(--volume)
+    );
+  }
+  input[type="range"]#seekSlider::-webkit-slider-runnable-track {
+    background: linear-gradient(
+      to right,
+      theme("backgroundColor.amber.300") var(--seeker),
+      theme("backgroundColor.dark.100") var(--seeker)
+    );
+  }
+  input[type="range"]#audioVolume::-moz-range-track {
+    background: linear-gradient(
+      to right,
+      theme("backgroundColor.amber.300") var(--volume),
+      theme("backgroundColor.dark.100") var(--volume)
+    );
+  }
+  input[type="range"]#audioVolume::-ms-fill-upper {
+    background: linear-gradient(
+      to right,
+      theme("backgroundColor.amber.300") var(--volume),
+      theme("backgroundColor.dark.100") var(--volume)
+    );
+  }
+
+  input#seeker::-webkit-slider-runnable-track,
+  input#seeker::-moz-range-track,
+  input#seeker::-ms-fill-upper {
+    background: linear-gradient(
+      to right,
+      theme("backgroundColor.amber.300") var(--seeker),
+      theme("backgroundColor.dark.100") var(--seeker)
+    );
+  }
+  ::-webkit-scrollbar {
+    background-color: theme("backgroundColor.black");
+    height: 10px;
+    width: 10px;
+  }
+}
